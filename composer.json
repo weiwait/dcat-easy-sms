@@ -1,0 +1,33 @@
+{
+    "name": "weiwait/dcat-easy-sms",
+    "alias": "",
+    "description": "快捷配置短信通知",
+    "type": "library",
+    "keywords": ["dcat-admin", "extension", "sms"],
+    "homepage": "https://github.com/weiwait/dcat-easy-sms",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "weiwait",
+            "email": "mail@weiwait.cn"
+        }
+    ],
+    "require": {
+        "php": ">=7.1.0",
+        "dcat/laravel-admin": "~2.0",
+        "overtrue/easy-sms": "~1.3.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "Weiwait\\DcatEasySms\\": "src/"
+        }
+    },
+    "extra": {
+        "dcat-admin": "Weiwait\\DcatEasySms\\DcatEasySmsServiceProvider",
+        "laravel": {
+            "providers": [
+                "Weiwait\\DcatEasySms\\DcatEasySmsServiceProvider"
+            ]
+        }
+    }
+}
