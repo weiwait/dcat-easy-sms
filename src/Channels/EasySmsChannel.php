@@ -12,7 +12,7 @@ class EasySmsChannel
     public function send($notifiable, Notification $notification): array
     {
         $config = [
-            'timeout' => SmsConfig::get('timeout'),
+            'timeout' => SmsConfig::get('timeout', 5),
             // 默认发送配置
             'default' => [
                 // 网关调用策略，默认：顺序调用

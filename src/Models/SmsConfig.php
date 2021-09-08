@@ -53,14 +53,12 @@ class SmsConfig extends Model
         } catch (\Exception $exception) {
             return $form
                 ->response()
-                ->error($exception->getMessage())
-                ->refresh();
+                ->error($exception->getMessage());
         }
 
         return $form
             ->response()
-            ->success('修改成功')
-            ->refresh();
+            ->success('修改成功');
     }
 
 }
