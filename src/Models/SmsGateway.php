@@ -19,7 +19,7 @@ class SmsGateway extends Model
     {
         return self::all()->map(function (self $gateway) {
             return [$gateway->gateway => collect($gateway->configs)->map(function ($item) use ($gateway) {
-                return [$item['key'] => Cache::get('settings.' . $gateway->gateway . '@' . $item['key'])];
+                return [$item['key'] => SmsConfig::get($gateway->gateway . '@' . $item['key'])];
             })->collapse()];
         })->collapse()->toArray();
     }
